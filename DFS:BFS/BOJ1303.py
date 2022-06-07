@@ -1,15 +1,10 @@
 import sys
-
 sys.setrecursionlimit(10000)
 
 n, m = map(int, input().split())
 arr = []
 w = []
 b = []
-
-
-# 같은 병사끼리 모이면 강해진다.
-# n 명이 뭉쳤을 때 n2 위력을 낼 수 있다.
 
 def dfs(x, y, cnt, str):
     arr[x][y] = 'C'
@@ -25,7 +20,6 @@ def dfs(x, y, cnt, str):
             cnt = dfs(nx, ny, cnt + 1, str)
     return cnt
 
-
 for _ in range(m):
     arr.append(list(input()))
 
@@ -40,4 +34,3 @@ for i in range(m):
 
 print(sum(w))
 print(sum(b))
-
